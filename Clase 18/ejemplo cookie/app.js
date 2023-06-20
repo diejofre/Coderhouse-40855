@@ -17,29 +17,21 @@ app.get("/setCookie", (req, res) => {
     .send("Cookie");
 });
 
-/*app.get("/setSignedCookie", (req, res) => {
+app.get("/getCookies", (req, res) => {
+  res.send(req.cookies);
+});
+
+app.get("/setSignedCookie", (req, res) => {
   res
     .cookie("SignedCookie", "Esta es una cookie muy poderosa", {
       maxAge: 100000,
       signed: true,
     })
     .send("Cookie");
-});*/
-
-app.get("/getCookies", (req, res) => {
-  res.send(req.cookies);
 });
 
-app.get("/setSignedCookie", (req, res) => {
-  res.cookie("signedCookie", "HABICHUELAS", {
-    maxAge: 900000,
-    signed: true,
-  });
-  res.send("Cookie is set");
-});
 app.get("/getSignedCookie", (req, res) => {
-  const cookie = req.signedCookies["signedCookie"];
-  res.send(`El valor del a cookie es ${cookie}`);
+  res.send(req.signedCookies);
 });
 
 app.get("/deleteCookie", (req, res) => {
