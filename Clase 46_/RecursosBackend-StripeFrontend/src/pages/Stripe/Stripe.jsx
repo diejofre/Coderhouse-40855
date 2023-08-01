@@ -9,7 +9,7 @@ import ProductCard from "./components/ProductCard";
 import PaymentService from "../../services/paymentService";
 
 const stripePromise = loadStripe(
-  "pk_test_51NaAo9Krr5Ow2Xo9xxdaveapHoDIrYsSmXkYqGHSM1Wie0TGveSW0DclMpDhIaxwfVmeCDLKsRi0R1mMlymtLj4a00v8CmMrBh"
+  "YOUR_PK_TEST"
 );
 
 const Stripe = () => {
